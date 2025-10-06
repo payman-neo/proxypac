@@ -1,3 +1,9 @@
 function FindProxyForURL(url, host) {
-    return "PROXY 192.168.100.7:12334";
+    var proxy = "PROXY 192.168.100.7:12334";
+
+    if (isResolvable("192.168.100.7")) {
+        return proxy;
+    }
+
+    return "DIRECT";
 }
